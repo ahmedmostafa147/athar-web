@@ -1,0 +1,281 @@
+/* ==========================================================================
+   ATHAR LANDING PAGE - ADDED SECTIONS
+   Stats strip, about, privacy summary, FAQ, store badges.
+   Uses the tokens from base.css only — no new colours are invented here.
+   ========================================================================== */
+
+/* ── Stats strip ─────────────────────────────────────────────────────────── */
+.stats-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1px;
+  background: var(--divider-dark);
+  border: 1px solid var(--divider-dark);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  margin-top: 56px;
+}
+
+.stat {
+  background: var(--surface-dark);
+  padding: 28px 16px;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 1.9rem;
+  font-weight: 800;
+  line-height: 1.2;
+  background: var(--grad-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stat-label {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* ── About ───────────────────────────────────────────────────────────────── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.about-lead {
+  font-size: 1.15rem;
+  line-height: 2.1;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.about-lead strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.pillar-list {
+  list-style: none;
+  display: grid;
+  gap: 14px;
+}
+
+.pillar {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: rgba(22, 27, 34, 0.4);
+  border: 1px solid var(--divider-dark);
+  border-radius: 14px;
+  padding: 18px 20px;
+}
+
+.pillar-mark {
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  background: rgba(58, 175, 184, 0.12);
+  color: var(--primary-soft);
+  font-weight: 800;
+}
+
+.pillar-body strong {
+  display: block;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.pillar-body span {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.85;
+}
+
+/* ── Privacy summary ─────────────────────────────────────────────────────── */
+.privacy-band {
+  background: linear-gradient(180deg, rgba(15, 76, 92, 0.16), transparent);
+  border-top: 1px solid var(--divider-dark);
+  border-bottom: 1px solid var(--divider-dark);
+}
+
+.privacy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.privacy-card {
+  background: rgba(22, 27, 34, 0.55);
+  border: 1px solid var(--divider-dark);
+  border-radius: 14px;
+  padding: 24px;
+  text-align: center;
+}
+
+.privacy-card .mark {
+  font-size: 1.7rem;
+  color: var(--primary-soft);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.privacy-card strong {
+  display: block;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.privacy-card span {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.privacy-note {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--text-secondary);
+  line-height: 2;
+}
+
+.privacy-note a {
+  color: var(--primary-soft);
+}
+
+/* ── FAQ ─────────────────────────────────────────────────────────────────── */
+.faq-list {
+  max-width: 860px;
+  margin: 0 auto;
+  display: grid;
+  gap: 12px;
+}
+
+.faq-item {
+  background: rgba(22, 27, 34, 0.4);
+  border: 1px solid var(--divider-dark);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.faq-item[open] {
+  border-color: rgba(58, 175, 184, 0.35);
+  background: rgba(22, 27, 34, 0.7);
+}
+
+.faq-item summary {
+  cursor: pointer;
+  padding: 20px 24px;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: '+';
+  flex: 0 0 auto;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--primary-soft);
+  transition: var(--transition-smooth);
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  padding: 0 24px 22px;
+  color: var(--text-secondary);
+  line-height: 2;
+}
+
+.faq-answer a {
+  color: var(--primary-soft);
+}
+
+/* ── Store badge ─────────────────────────────────────────────────────────── */
+.store-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 30px;
+  border-radius: 14px;
+  background: var(--grad-primary);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 4px 20px rgba(30, 107, 122, 0.3);
+  transition: var(--transition-smooth);
+}
+
+.store-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 26px rgba(30, 107, 122, 0.45);
+}
+
+.store-badge svg {
+  width: 26px;
+  height: 26px;
+  flex: 0 0 auto;
+}
+
+.store-badge small {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.download-meta {
+  margin-top: 28px;
+  color: var(--text-tertiary);
+  font-size: 0.9rem;
+  line-height: 2;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+@media (max-width: 600px) {
+  .stat {
+    padding: 22px 12px;
+  }
+
+  .stat-value {
+    font-size: 1.5rem;
+  }
+
+  .faq-item summary {
+    padding: 16px 18px;
+    font-size: 0.95rem;
+  }
+
+  .faq-answer {
+    padding: 0 18px 18px;
+    font-size: 0.92rem;
+  }
+}
